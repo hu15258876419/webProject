@@ -23,17 +23,31 @@
 	span{background:yellow;}
 </style>
 <script>
+	//@ sourceURL=index.html
 	window.onload=function(){
-		var oList=document.getElementById("list").getElementsByTagName("li")[0];
+		var oList=document.getElementById("list").getElementsByTagName("li")[0];//获取元素
+																					/*oList：	<li>展开
+																						            	<ul id="lis">
+																						                	<li>查找</li>
+																						           			<li>替换</li>	
+																						                </ul>
+																						        </li>*/
 		var oLis=document.getElementById("lis");
+																								/*oLis：<ul id="lis">
+																						                	<li>查找</li>
+																						           			<li>替换</li>	
+																						                </ul>*/
 		var li=oLis.getElementsByTagName("li");
+																									/*li:   <li>查找</li>
+																						           			<li>替换</li>*/
 		var oTab=document.getElementById("tab");
+		
 		var lis=oTab.getElementsByTagName("li");
 		var oDiv=oTab.getElementsByTagName("div");
-		var oInp=oDiv[0].getElementsByTagName("input");
-		var aInp=oDiv[1].getElementsByTagName("input");
+		var oInp=oDiv[0].getElementsByTagName("input");//<input type="text" />  <input type="button" value="查找"/>
+		var aInp=oDiv[1].getElementsByTagName("input");//<input type="text" /><input type="text" /><input type="button" value="替换"/>
 		var oP=document.getElementsByTagName("p")[0];
-		
+		debugger;
 		oList.onclick=function(){
 			oLis.style.display="block";
 		}
@@ -46,9 +60,9 @@
 		//查找内容;
 		var text=oP.innerHTML;
 		oInp[1].onclick=function(){
-			var str=oInp[0].value;
+			var str=oInp[0].value;//获取要查找的字符串
 			//判断
-			if(oP.innerHTML.indexOf(str)==-1){
+			if(oP.innerHTML.indexOf(str)==-1){//获取所
 				alert("未找到您要找的文字！");
 			}else if(str==""){
 				alert("请输入文字！")
